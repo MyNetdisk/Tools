@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>在线图片水印工具</title>
+</head>
+<body>
+  <header class="header">
+    <h1>图片水印生成器</h1>
+    <p>支持自定义文字、颜色和大小</p>
+  </header>
+
+  <main class="container">
+    <section class="controls">
+      <input type="file" id="imageInput" accept="image/*">
+      <input type="text" id="watermarkText" placeholder="输入水印文字">
+      <input type="color" id="watermarkColor" value="#000000">
+      <input type="range" id="watermarkSize" min="12" max="48" value="24">
+      <button id="downloadBtn">下载图片</button>
+    </section>
+
+    <section class="preview">
+      <canvas id="previewCanvas"></canvas>
+    </section>
+  </main>
+
+  <!-- SEO优化内容 -->
+  <section class="seo-content">
+    <h2>如何为图片添加水印？</h2>
+    <p>上传您的图片，输入水印文字并调整参数，即可生成带水印的图片...</p>
+  </section>
+</body>
+</html>

@@ -1,0 +1,2 @@
+echo "📝 正在验证提交信息..."
+npx --no -- commitlint --edit "$1"
