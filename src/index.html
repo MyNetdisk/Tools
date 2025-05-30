@@ -1,35 +1,85 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>在线图片水印工具</title>
-</head>
-<body>
-  <div id="app"></div>
-  <header class="header">
-    <h1>图片水印生成器</h1>
-    <p class="text-3xl font-bold text-center mt-8 text-blue-600">支持自定义文字、颜色和大小</p>
-  </header>
-
-  <main class="container">
-    <section class="controls">
-      <input type="file" id="imageInput" accept="image/*">
-      <input type="text" id="watermarkText" placeholder="输入水印文字">
-      <input type="color" id="watermarkColor" value="#000000">
-      <input type="range" id="watermarkSize" min="12" max="48" value="24">
-      <button id="downloadBtn">下载图片</button>
-    </section>
-
-    <section class="preview">
-      <canvas id="previewCanvas"></canvas>
-    </section>
-  </main>
-
-  <!-- SEO优化内容 -->
-  <section class="seo-content">
-    <h2>如何为图片添加水印？</h2>
-    <p>上传您的图片，输入水印文字并调整参数，即可生成带水印的图片...</p>
-  </section>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>在线图片水印工具</title>
+  </head>
+  <body class="bg-gray-200 flex flex-col justify-start items-center pb-8">
+    <!-- 标题 -->
+    <header class="header w-full mb-4 px-4 py-8">
+      <h1 class="font-bold text-white text-4xl text-left">图片水印生成器</h1>
+      <p class="font-bold text-white text-2xl text-left mt-2">支持自定义文字、颜色和大小</p>
+    </header>
+    <!-- 主要内容 -->
+    <main class="flex justify-between items-start w-[98%] rounded-md bg-white overflow-hidden p-4">
+      <section class="controls flex flex-col items-start">
+        <form class="rounded-md">
+          <fieldset class="border-1 border-[#ccc] rounded-sm p-2">
+            <legend class="ml-2">编辑表单</legend>
+            <p class="mt-2 flex flex-col items-start">
+              <label for="watermarkText" class="text-[#4a6fa5]">水印文字：</label>
+              <input
+                class="bg-[#f9f9f9] border-1 border-[#ddd] w-full rounded-sm p-1"
+                type="text"
+                id="watermarkText"
+                placeholder="输入水印文字"
+              />
+            </p>
+            <p class="mt-2 flex flex-col items-start">
+              <label for="font" class="text-[#4a6fa5]">
+                水印字体:
+              </label>
+              <select
+                id="font"
+                name="font"
+                class="bg-[#f9f9f9] border-1 border-[#ddd] w-full rounded-sm p-1"
+              >
+                <option value="visa">Visa</option>
+                <option value="mc">Mastercard</option>
+                <option value="amex">American Express</option>
+              </select>
+            </p>
+            <p class="mt-2 flex flex-col items-start">
+              <label for="watermarkSize" class="text-[#4a6fa5]">文字大小：</label>
+              <input
+                class="bg-[#f9f9f9] border-1 border-[#ddd] w-full rounded-sm p-1"
+                type="range"
+                id="watermarkSize"
+                min="12"
+                max="48"
+                value="24"
+              />
+            </p>
+            <p class="mt-2 flex flex-col items-start">
+              <label for="watermarkColor" class="text-[#4a6fa5]">文字颜色：</label>
+              <input
+                class="bg-[#f9f9f9] border-1 border-[#ddd] rounded-sm p-1"
+                type="color"
+                id="watermarkColor"
+                value="#000000"
+              />
+            </p>
+            <p class="mt-2 mb-2 flex flex-col items-start">
+              <label for="imageInput" class="text-[#4a6fa5]">上传图片：</label>
+              <input
+                class="bg-[#f9f9f9] border-1 border-[#ddd] rounded-sm p-1"
+                type="file"
+                id="imageInput"
+                accept="image/*"
+              />
+            </p>
+          </fieldset>
+          <fieldset class="border-1 border-[#ccc] rounded-sm p-2 mt-4">
+            <legend class="ml-2">操作按钮</legend>
+            <button id="generateBtn" class="bg-blue-500 text-white rounded-sm p-1">预览图片</button>
+            <button id="downloadBtn" class="bg-green-500 text-white rounded-sm p-1">下载图片</button>
+          </fieldset>
+        </form>
+      </section>
+      <section class="bg-pink-500 ml-4 grow h-full">
+        <canvas id="previewCanvas"></canvas>
+      </section>
+    </main>
+  </body>
 </html>
