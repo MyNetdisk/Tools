@@ -29,8 +29,8 @@ module.exports = {
         test: /\.css$/, // 匹配css文件
         use: [
           MiniCssExtractPlugin.loader, // 把css提取到单独的文件中
-          'style-loader', // 把css插入到页面中
           'css-loader', // 解析css文件
+          'postcss-loader' // ← 自动读取 postcss.config.js 的配置
         ],
       },
       {
