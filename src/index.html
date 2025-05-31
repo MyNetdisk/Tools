@@ -14,7 +14,7 @@
     <!-- 主要内容 -->
     <main class="flex justify-between items-start w-[98%] rounded-md bg-white overflow-hidden p-4">
       <section class="controls flex flex-col items-start">
-        <form class="rounded-md">
+        <form id="form" class="rounded-md">
           <fieldset class="border-1 border-[#ccc] rounded-sm p-2">
             <legend class="ml-2">编辑表单</legend>
             <p class="mt-2 flex flex-col items-start">
@@ -23,6 +23,7 @@
                 class="bg-[#f9f9f9] border-1 border-[#ddd] w-full rounded-sm p-1"
                 type="text"
                 id="watermarkText"
+                name="watermarkText"
                 placeholder="输入水印文字"
               />
             </p>
@@ -31,8 +32,8 @@
                 水印字体:
               </label>
               <select
-                id="font"
-                name="font"
+                id="watermarkFont"
+                name="watermarkFont"
                 class="bg-[#f9f9f9] border-1 border-[#ddd] w-full rounded-sm p-1"
               >
                 <option value="visa">Visa</option>
@@ -46,6 +47,7 @@
                 class="bg-[#f9f9f9] border-1 border-[#ddd] w-full rounded-sm p-1"
                 type="range"
                 id="watermarkSize"
+                name="watermarkSize"
                 min="12"
                 max="48"
                 value="24"
@@ -57,6 +59,7 @@
                 class="bg-[#f9f9f9] border-1 border-[#ddd] rounded-sm p-1"
                 type="color"
                 id="watermarkColor"
+                name="watermarkColor"
                 value="#000000"
               />
             </p>
@@ -66,19 +69,20 @@
                 class="bg-[#f9f9f9] border-1 border-[#ddd] rounded-sm p-1"
                 type="file"
                 id="imageInput"
+                name="imageInput"
                 accept="image/*"
               />
             </p>
           </fieldset>
           <fieldset class="border-1 border-[#ccc] rounded-sm p-2 mt-4">
             <legend class="ml-2">操作按钮</legend>
-            <button id="generateBtn" class="bg-blue-500 text-white rounded-sm p-1">预览图片</button>
-            <button id="downloadBtn" class="bg-green-500 text-white rounded-sm p-1">下载图片</button>
+            <button type="submit" id="preview" class="bg-blue-500 text-white rounded-sm p-1">预览图片</button>
+            <button type="submit" id="download" class="bg-green-500 text-white rounded-sm p-1">下载图片</button>
           </fieldset>
         </form>
       </section>
       <section class="bg-pink-500 ml-4 grow h-full">
-        <canvas id="previewCanvas"></canvas>
+        <div id="imageContainer" class=" w-[300px] h-[300px] bg-green-500"></div>
       </section>
     </main>
   </body>

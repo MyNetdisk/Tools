@@ -4,11 +4,13 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin'); // 清理dist文
 const MiniCssExtractPlugin = require('mini-css-extract-plugin'); // 把css提取到单独的文件中
 
 module.exports = {
-  entry: './src/main.js', // 入口文件
+  entry: {
+    main: './src/main.js',       // 主业务逻辑
+  }, // 入口文件
   output: {
     path: path.resolve(__dirname, 'dist'), // 输出文件路径
     filename: 'js/bundle-[name]-[fullhash:8].js', // 输出文件名
-  },
+  }, // 输出文件
   plugins: [
     new HtmlWebpackPlugin({
       // 生成html文件
