@@ -44,12 +44,4 @@ module.exports = {
       },
     ],
   },
-  performance: {
-    hints: 'warning',
-    maxAssetSize: 200000, // 最大文件大小
-    maxEntrypointSize: 400000, // 最大入口文件大小
-    assetFilter: function (assetFilename) {
-      return assetFilename.endsWith('.js') || assetFilename.endsWith('.css');
-    },
-  },
 };
