@@ -6,6 +6,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin'); // 把css提取
 module.exports = {
   entry: {
     main: './src/main.js',       // 主业务逻辑
+    watermark: './src/watermark/js/index.js', // 水印
   }, // 入口文件
   output: {
     path: path.resolve(__dirname, 'dist'), // 输出文件路径
@@ -19,6 +20,14 @@ module.exports = {
       filename: 'index.html', // 输出文件名
       inject: 'head', // 注入位置
       chunks: ['main'], // 引入的js文件
+    }),
+    new HtmlWebpackPlugin({
+      // 生成html文件
+      title: '水印', // 页面标题
+      template: './src/watermark/index.html', // 模板文件
+      filename: 'watermark.html', // 输出文件名
+      inject: 'head', // 注入位置
+      chunks: ['watermark'], // 引入的js文件
     }),
     new CleanWebpackPlugin(), // 清理dist文件夹
     new MiniCssExtractPlugin({

@@ -3,138 +3,227 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>在线图片水印工具</title>
-    <link
-      rel="stylesheet"
-      href="//at.alicdn.com/t/c/font_4937642_4sp7mbr5l15.css"
-    />
+    <title>在线工具集 - 高效便捷的在线工具平台</title>
   </head>
-  <body class="bg-gray-200 flex flex-col justify-start items-center pb-8">
-    <!-- 标题 -->
-    <header class="header w-full mb-4 px-4 py-8">
-      <h1 class="font-bold text-white text-4xl text-left">图片水印生成器</h1>
-      <p class="font-bold text-white text-2xl text-left mt-2">
-        支持自定义文字、颜色和大小
-      </p>
+  <body class="bg-gray-50 min-h-screen">
+    <!-- Header -->
+    <header class="gradient-bg text-white py-10 px-4">
+      <div class="max-w-6xl mx-auto text-center">
+        <div class="floating">
+          <h1 class="text-3xl md:text-5xl font-bold mb-6 slide-in">
+            在线工具集
+          </h1>
+        </div>
+        <p class="text-xl md:text-2xl mb-2 opacity-90 slide-in stagger-1">
+          高效便捷的在线工具平台，助力您的工作与生活
+        </p>
+      </div>
     </header>
-    <!-- 主要内容 -->
-    <main
-      class="grid grid-cols-1 md:grid-cols-3 gap-4 w-[98%] rounded-md bg-white overflow-hidden p-4"
-    >
-      <!-- 原图 -->
-      <section class="h-[450px]">
-        <fieldset class="border-1 border-[#ccc] rounded-sm p-4 w-full h-full">
-          <legend class="ml-2">原图</legend>
-          <div
-            id="imageContainer"
-            class="w-full h-full outline-2 outline-dashed outline-offset-4 outline-gray-400 flex justify-center items-center overflow-hidden"
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-4 py-16">
+      <!-- Tools Grid -->
+      <section class="mb-20">
+        <h2 class="text-3xl font-bold text-center mb-12 text-gray-800 slide-in">
+          精选工具
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- 水印生成工具 -->
+          <a
+            href="/watermark.html"
+            class="tool-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl slide-in stagger-6"
           >
-            <!-- HTML -->
-            <div class="flex justify-center items-center">
-              <!-- 隐藏原生 input -->
-              <input
-                type="file"
-                id="imageInput"
-                class="visually-hidden"
-                accept="image/*"
-              />
-              <!-- 自定义按钮 -->
-              <label for="imageInput" class="flex flex-col justify-center items-center cursor-pointer">
-                <i
-                  class="iconfont icon-shangchuan"
-                  style="font-size: 40px; color: red"
-                ></i>
-                <span>点击选择文件</span>
-              </label>
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-teal-500 to-teal-600 rounded-xl mb-6 flex items-center justify-center"
+            >
+              <svg
+                class="w-8 h-8 text-white"
+                viewBox="0 0 32 32"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <!-- 背景图片框 -->
+                <rect
+                  x="4"
+                  y="4"
+                  width="24"
+                  height="18"
+                  rx="2"
+                  fill="none"
+                  stroke="white"
+                  stroke-width="2"
+                />
+
+                <!-- 图片内容（山峰） -->
+                <path
+                  d="M6 18 L12 12 L18 16 L26 10 L26 20 L6 20 Z"
+                  fill="white"
+                  opacity="0.6"
+                />
+
+                <!-- 太阳 -->
+                <circle cx="22" cy="9" r="2" fill="white" opacity="0.7" />
+
+                <!-- 水印文字背景 -->
+                <rect
+                  x="8"
+                  y="24"
+                  width="16"
+                  height="6"
+                  rx="1"
+                  fill="white"
+                  opacity="0.3"
+                  stroke="white"
+                  stroke-width="1"
+                />
+
+                <!-- 水印文字线条 -->
+                <line
+                  x1="10"
+                  y1="26"
+                  x2="22"
+                  y2="26"
+                  stroke="white"
+                  stroke-width="1.5"
+                  opacity="0.8"
+                />
+                <line
+                  x1="10"
+                  y1="28"
+                  x2="18"
+                  y2="28"
+                  stroke="white"
+                  stroke-width="1.5"
+                  opacity="0.8"
+                />
+
+                <!-- 水印标识点 -->
+                <circle cx="20" cy="28" r="1" fill="white" opacity="0.9" />
+                <circle cx="22" cy="28" r="1" fill="white" opacity="0.9" />
+              </svg>
             </div>
+            <h3 class="text-xl font-semibold mb-3 text-gray-800">
+              水印生成工具
+            </h3>
+            <p class="text-gray-600">
+              图片水印添加、文字水印、Logo水印、批量处理
+            </p>
+          </a>
+        </div>
+      </section>
+
+      <!-- Features Section -->
+      <section class="text-center bg-white rounded-3xl p-12 shadow-lg">
+        <h2 class="text-3xl font-bold mb-8 text-gray-800">为什么选择我们</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="p-6">
+            <div
+              class="w-16 h-16 bg-blue-100 rounded-full mx-auto mb-4 flex items-center justify-center"
+            >
+              <svg
+                class="w-8 h-8 text-blue-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 10V3L4 14h7v7l9-11h-7z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">快速高效</h3>
+            <p class="text-gray-600">
+              所有工具都经过优化，确保快速响应和高效处理
+            </p>
           </div>
-        </fieldset>
-      </section>
-      <!-- 表单 -->
-      <section class="controls flex flex-col flex-1 items-start">
-        <form id="form" class="rounded-md w-full">
-          <fieldset class="border-1 border-[#ccc] rounded-sm p-2">
-            <legend class="ml-2">编辑表单</legend>
-            <p class="mt-2 flex flex-col items-start">
-              <label for="watermarkText" class="text-[#4a6fa5]"
-                >水印文字：</label
-              >
-              <input
-                class="bg-[#f9f9f9] border-1 border-[#ddd] w-full rounded-sm p-1"
-                type="text"
-                id="watermarkText"
-                name="watermarkText"
-                placeholder="输入水印文字"
-              />
-            </p>
-            <p class="mt-2 flex flex-col items-start">
-              <label for="watermarkFont" class="text-[#4a6fa5]"> 水印字体: </label>
-              <select
-                id="watermarkFont"
-                name="watermarkFont"
-                class="bg-[#f9f9f9] border-1 border-[#ddd] w-full rounded-sm p-1"
-              >
-                <option value="visa">Visa</option>
-                <option value="mc">Mastercard</option>
-                <option value="amex">American Express</option>
-              </select>
-            </p>
-            <p class="mt-2 flex flex-col items-start">
-              <label for="watermarkSize" class="text-[#4a6fa5]"
-                >文字大小：</label
-              >
-              <input
-                class="bg-[#f9f9f9] border-1 border-[#ddd] w-full rounded-sm p-1"
-                type="range"
-                id="watermarkSize"
-                name="watermarkSize"
-                min="12"
-                max="48"
-                value="24"
-              />
-            </p>
-            <p class="mt-2 flex flex-col items-start">
-              <label for="watermarkColor" class="text-[#4a6fa5]"
-                >文字颜色：</label
-              >
-              <input
-                class="bg-[#f9f9f9] border-1 border-[#ddd] rounded-sm p-1"
-                type="color"
-                id="watermarkColor"
-                name="watermarkColor"
-                value="#000000"
-              />
-            </p>
-          </fieldset>
-          <fieldset class="border-1 border-[#ccc] rounded-sm p-2 mt-4">
-            <legend class="ml-2">操作按钮</legend>
-            <button
-              type="submit"
-              id="preview"
-              class="bg-blue-500 text-white rounded-sm p-1"
+
+          <div class="p-6">
+            <div
+              class="w-16 h-16 bg-green-100 rounded-full mx-auto mb-4 flex items-center justify-center"
             >
-              预览图片
-            </button>
-            <button
-              type="submit"
-              id="download"
-              class="bg-green-500 text-white rounded-sm p-1"
+              <svg
+                class="w-8 h-8 text-green-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">安全可靠</h3>
+            <p class="text-gray-600">数据处理全程加密，不保存任何用户信息</p>
+          </div>
+
+          <div class="p-6">
+            <div
+              class="w-16 h-16 bg-purple-100 rounded-full mx-auto mb-4 flex items-center justify-center"
             >
-              下载图片
-            </button>
-          </fieldset>
-        </form>
-      </section>
-      <!-- 预览 -->
-      <section class="h-[450px]">
-        <fieldset class="border-1 border-[#ccc] rounded-sm p-4 w-full h-full">
-          <legend class="ml-2">预览图</legend>
-          <div
-            id="previewContainer"
-            class="w-full h-full outline-2 outline-dashed outline-offset-4 outline-gray-400 flex justify-center items-center overflow-hidden"
-          ></div>
-        </fieldset>
+              <svg
+                class="w-8 h-8 text-purple-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">完全免费</h3>
+            <p class="text-gray-600">所有工具完全免费使用，无需注册和登录</p>
+          </div>
+        </div>
       </section>
     </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 px-4">
+      <div class="max-w-6xl mx-auto text-center">
+        <div class="mb-8">
+          <h3 class="text-2xl font-bold mb-4">在线工具集</h3>
+          <p class="text-gray-400 mb-6">让工作更高效，让生活更便捷</p>
+
+          <div class="flex justify-center space-x-6 mb-8">
+            <a
+              href="/about"
+              class="text-gray-400 hover:text-white transition-colors"
+              >关于我们</a
+            >
+            <a
+              href="/contact"
+              class="text-gray-400 hover:text-white transition-colors"
+              >联系我们</a
+            >
+            <a
+              href="/privacy"
+              class="text-gray-400 hover:text-white transition-colors"
+              >隐私政策</a
+            >
+            <a
+              href="/terms"
+              class="text-gray-400 hover:text-white transition-colors"
+              >服务条款</a
+            >
+          </div>
+        </div>
+
+        <div class="border-t border-gray-700 pt-8">
+          <p class="text-gray-400">© 2025 在线工具集. 保留所有权利.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script></script>
   </body>
 </html>
