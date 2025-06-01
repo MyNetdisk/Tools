@@ -4,21 +4,61 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>在线图片水印工具</title>
+    <link
+      rel="stylesheet"
+      href="//at.alicdn.com/t/c/font_4937642_4sp7mbr5l15.css"
+    />
   </head>
   <body class="bg-gray-200 flex flex-col justify-start items-center pb-8">
     <!-- 标题 -->
     <header class="header w-full mb-4 px-4 py-8">
       <h1 class="font-bold text-white text-4xl text-left">图片水印生成器</h1>
-      <p class="font-bold text-white text-2xl text-left mt-2">支持自定义文字、颜色和大小</p>
+      <p class="font-bold text-white text-2xl text-left mt-2">
+        支持自定义文字、颜色和大小
+      </p>
     </header>
     <!-- 主要内容 -->
-    <main class="flex justify-between items-start w-[98%] rounded-md bg-white overflow-hidden p-4">
-      <section class="controls flex flex-col items-start">
-        <form id="form" class="rounded-md">
+    <main
+      class="grid grid-cols-1 md:grid-cols-3 gap-4 w-[98%] rounded-md bg-white overflow-hidden p-4"
+    >
+      <!-- 原图 -->
+      <section class="h-[450px]">
+        <fieldset class="border-1 border-[#ccc] rounded-sm p-4 w-full h-full">
+          <legend class="ml-2">原图</legend>
+          <div
+            id="imageContainer"
+            class="w-full h-full outline-2 outline-dashed outline-offset-4 outline-gray-400 flex justify-center items-center overflow-hidden"
+          >
+            <!-- HTML -->
+            <div class="flex justify-center items-center">
+              <!-- 隐藏原生 input -->
+              <input
+                type="file"
+                id="imageInput"
+                class="visually-hidden"
+                accept="image/*"
+              />
+              <!-- 自定义按钮 -->
+              <label for="imageInput" class="flex flex-col justify-center items-center cursor-pointer">
+                <i
+                  class="iconfont icon-shangchuan"
+                  style="font-size: 40px; color: red"
+                ></i>
+                <span>点击选择文件</span>
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </section>
+      <!-- 表单 -->
+      <section class="controls flex flex-col flex-1 items-start">
+        <form id="form" class="rounded-md w-full">
           <fieldset class="border-1 border-[#ccc] rounded-sm p-2">
             <legend class="ml-2">编辑表单</legend>
             <p class="mt-2 flex flex-col items-start">
-              <label for="watermarkText" class="text-[#4a6fa5]">水印文字：</label>
+              <label for="watermarkText" class="text-[#4a6fa5]"
+                >水印文字：</label
+              >
               <input
                 class="bg-[#f9f9f9] border-1 border-[#ddd] w-full rounded-sm p-1"
                 type="text"
@@ -28,9 +68,7 @@
               />
             </p>
             <p class="mt-2 flex flex-col items-start">
-              <label for="font" class="text-[#4a6fa5]">
-                水印字体:
-              </label>
+              <label for="watermarkFont" class="text-[#4a6fa5]"> 水印字体: </label>
               <select
                 id="watermarkFont"
                 name="watermarkFont"
@@ -42,7 +80,9 @@
               </select>
             </p>
             <p class="mt-2 flex flex-col items-start">
-              <label for="watermarkSize" class="text-[#4a6fa5]">文字大小：</label>
+              <label for="watermarkSize" class="text-[#4a6fa5]"
+                >文字大小：</label
+              >
               <input
                 class="bg-[#f9f9f9] border-1 border-[#ddd] w-full rounded-sm p-1"
                 type="range"
@@ -54,7 +94,9 @@
               />
             </p>
             <p class="mt-2 flex flex-col items-start">
-              <label for="watermarkColor" class="text-[#4a6fa5]">文字颜色：</label>
+              <label for="watermarkColor" class="text-[#4a6fa5]"
+                >文字颜色：</label
+              >
               <input
                 class="bg-[#f9f9f9] border-1 border-[#ddd] rounded-sm p-1"
                 type="color"
@@ -63,26 +105,35 @@
                 value="#000000"
               />
             </p>
-            <p class="mt-2 mb-2 flex flex-col items-start">
-              <label for="imageInput" class="text-[#4a6fa5]">上传图片：</label>
-              <input
-                class="bg-[#f9f9f9] border-1 border-[#ddd] rounded-sm p-1"
-                type="file"
-                id="imageInput"
-                name="imageInput"
-                accept="image/*"
-              />
-            </p>
           </fieldset>
           <fieldset class="border-1 border-[#ccc] rounded-sm p-2 mt-4">
             <legend class="ml-2">操作按钮</legend>
-            <button type="submit" id="preview" class="bg-blue-500 text-white rounded-sm p-1">预览图片</button>
-            <button type="submit" id="download" class="bg-green-500 text-white rounded-sm p-1">下载图片</button>
+            <button
+              type="submit"
+              id="preview"
+              class="bg-blue-500 text-white rounded-sm p-1"
+            >
+              预览图片
+            </button>
+            <button
+              type="submit"
+              id="download"
+              class="bg-green-500 text-white rounded-sm p-1"
+            >
+              下载图片
+            </button>
           </fieldset>
         </form>
       </section>
-      <section class="bg-pink-500 ml-4 grow h-full">
-        <div id="imageContainer" class=" w-[300px] h-[300px] bg-green-500"></div>
+      <!-- 预览 -->
+      <section class="h-[450px]">
+        <fieldset class="border-1 border-[#ccc] rounded-sm p-4 w-full h-full">
+          <legend class="ml-2">预览图</legend>
+          <div
+            id="previewContainer"
+            class="w-full h-full outline-2 outline-dashed outline-offset-4 outline-gray-400 flex justify-center items-center overflow-hidden"
+          ></div>
+        </fieldset>
       </section>
     </main>
   </body>
