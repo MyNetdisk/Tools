@@ -11,7 +11,6 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'), // 输出文件路径
     filename: 'js/bundle-[name]-[fullhash:8].js', // 输出文件名
-    publicPath: '/Tools', // 如果部署到子路径（如仓库名），需改为 '/repo-name/'
   }, // 输出文件
   plugins: [
     new HtmlWebpackPlugin({
@@ -19,7 +18,7 @@ module.exports = {
       title: '主页', // 页面标题
       template: './src/index.html', // 模板文件
       templateParameters: {
-        publicPath: process.env.PUBLIC_PATH || '/' // 注入模板变量
+        baseHref: process.env.NODE_ENV === 'production' ? `/${process.env.REPO_NAME}/` : '/'
       }, // 模板参数
       filename: 'index.html', // 输出文件名
       inject: 'head', // 注入位置

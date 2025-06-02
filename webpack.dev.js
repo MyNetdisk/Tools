@@ -4,6 +4,9 @@ const path = require('path'); // 引入path模块
 
 const devConfig = {
   mode: 'development', // 开发模式
+  output: {
+    publicPath: '/' // 开发环境用根路径
+  },
   // 开发服务器配置
   devServer: {
     static: {

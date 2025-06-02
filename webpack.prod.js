@@ -9,6 +9,9 @@ const isAnalyzeMode = process.env.ANALYZE_BUNDLE === 'true'; // 判断是否分�
 // 生产环境配置
 const prodConfig = {
   mode: 'production', // 生产模式
+  output: {
+    publicPath: `/${process.env.REPO_NAME}/`, // 如果部署到子路径（如仓库名），需改为 '/repo-name/'
+  },
   // 输出配置
   optimization: {
     minimize: true, // 开启代码压缩

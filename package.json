@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js",
+    "dev": "cross-env NODE_ENV=development webpack --config webpack.dev.js",
+    "build": "cross-env REPO_NAME=Tools NODE_ENV=production webpack --config webpack.prod.js",
     "analyze": "cross-env ANALYZE_BUNDLE=true webpack --config webpack.prod.js",
     "serve": "webpack serve --config webpack.dev.js",
     "lint": "eslint . --max-warnings=0",
