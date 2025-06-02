@@ -24,11 +24,25 @@ jobs:
       - name: Build
         run: npm run build # 你的 Webpack 构建命令（如 build/prod）
 
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
+
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
 
     steps:
+      # 新增：下载构建产物
+      - name: Download dist
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist/
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
