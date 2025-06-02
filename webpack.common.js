@@ -18,6 +18,9 @@ module.exports = {
       // 生成html文件
       title: '主页', // 页面标题
       template: './src/index.html', // 模板文件
+      templateParameters: {
+        publicPath: process.env.PUBLIC_PATH || '/' // 注入模板变量
+      }, // 模板参数
       filename: 'index.html', // 输出文件名
       inject: 'head', // 注入位置
       chunks: ['main'], // 引入的js文件
