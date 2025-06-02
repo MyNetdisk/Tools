@@ -11,6 +11,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'), // 输出文件路径
     filename: 'js/bundle-[name]-[fullhash:8].js', // 输出文件名
+    publicPath: '/Tools', // 如果部署到子路径（如仓库名），需改为 '/repo-name/'
   }, // 输出文件
   plugins: [
     new HtmlWebpackPlugin({
